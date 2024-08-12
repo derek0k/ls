@@ -1,8 +1,59 @@
-# React + Vite
+# 🏅 Olympic Medal Tracker 🏅
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2024년 파리 올림픽에서 각 국가가 획득한 메달을 실시간으로 추적하고 집계하는 사이트입니다. 사용자는 금, 은, 동 메달을 포함한 각 나라의 메달 현황을 쉽게 확인할 수 있습니다.
 
-Currently, two official plugins are available:
+## ✨ 요구 사항
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] 프로젝트 셋업
+
+  - [x] Vite 프로젝트 초기 설정 및 필요한 라이브러리 설치
+  - [ ] Prettier를 설정하여 코드 포맷을 규칙에 맞게 조정
+
+- [ ] 기본 UI 레이아웃 작성하기
+
+  - 메달 집계 결과를 표시할 기본 UI 구성
+  - 입력 폼 및 메달 리스트를 포함한 레이아웃 디자인
+
+- [ ] 상태 관리와 메달 집계 추가 기능 구현
+
+  - 국가 이름과 메달 수를 입력하여 `useState` 훅을 사용해 메달 집계 리스트에 추가
+
+- [ ] 메달 집계 리스트 출력하기
+
+  - `map`을 사용하여 출력
+
+- [ ] 메달 수 업데이트하기
+
+  - `find`를 사용하여 사용자가 입력한 메달 수에 따라 기존 국가의 메달 수를 업데이트
+
+- [ ] 메달 수 삭제
+
+  - `filter`을 사용하여 특정 국가의 메달 정보를 삭제하는 기능 구현
+
+- [ ] 최종 테스트 및 코드 정리
+  - 기능 테스트 : 코드에 기능 이상이 없는지 확인
+  - 컴포넌트 분리 : UI 요소들을 개별 컴포넌트 분리
+  - 리팩토링 : 코드의 중복을 제거하고 상태 관리 로직을 더 간결하게 개선
+  - README : 프로젝트 구조, 실행 방법, 주요 기능에 대한 설명
+
+## ✨ 추가된 요구 사항
+
+### 🎯 기능명세서
+
+- hook은 오직 useState만 사용하기
+
+- <form> 안에 국가명, 금메달, 은메달, 동메달을 위한 <input>을 각각 만들기
+
+- todo의 initial state는 `{id: 0, country: "", gold: 0, silver: 0, bronze: 0}`
+
+- Layout 최대 넓이는 `1200px`, 최소 넓이는 `800px`, 가운데 정렬
+
+### 💪🏻 Challenge
+
+- [ ] 이미 등록된 국가를 `국가 추가` 할 경우 alert 경고 메세지 표시
+
+- [ ] 등록되지 않은 국가를 `업데이트` 할 때 alert 경고 메세지 표시
+
+- [ ] 메달 수의 총합에 따라 국가 목록 정렬하는 기능 구현
+
+- [ ] 로컬스토리지를 이용해 메달 정보 저장 및 초기화 구현
