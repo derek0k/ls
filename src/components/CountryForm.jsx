@@ -1,13 +1,5 @@
 import { COUNTRY_FORM_INPUTS } from '../constants/countryFormData';
-
-const CountryFormItem = ({ inputItem, onChange, value }) => {
-  return (
-    <div>
-      <label>{inputItem.label}</label>
-      <input type={inputItem.type} name={inputItem.name} onChange={onChange} value={value} />
-    </div>
-  );
-};
+import { CountryFormItem } from './CountryFormItem';
 
 export const CountryForm = ({ countryForm, onChange, onAddClick, onUpdateClick }) => {
   return (

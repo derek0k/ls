@@ -1,18 +1,5 @@
 import { RANK_LIST_TITLE } from '../constants/countryFormData';
-
-const CountryRankListItem = ({ item, onDeleteClick }) => {
-  return (
-    <tr>
-      <td>{item.country}</td>
-      <td>{item.gold}</td>
-      <td>{item.silver}</td>
-      <td>{item.bronze}</td>
-      <td>
-        <button onClick={onDeleteClick}>삭제</button>
-      </td>
-    </tr>
-  );
-};
+import { CountryRankListItem } from './CountryRankListItem';
 
 export const CountryRankList = ({ countryList, onDeleteClick }) => {
   const sortedCountryList = countryList.toSorted((a, b) => {
