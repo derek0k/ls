@@ -1,3 +1,5 @@
+import { RANK_LIST_TITLE } from '../constants/countryFormData';
+
 const CountryRankListItem = ({ item, onDeleteClick }) => {
   return (
     <tr>

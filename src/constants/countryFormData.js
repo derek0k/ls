@@ -23,4 +23,4 @@ export const COUNTRY_FORM_INPUTS = Object.freeze([
   },
 ]);
 
-export const RANK_LIST_TITLE = Object.freeze([국가명, 금메달, 은메달, 동메달, 액션]);
+export const RANK_LIST_TITLE = Object.freeze(['국가명', '금메달', '은메달', '동메달', '액션']);
