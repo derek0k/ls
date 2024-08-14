@@ -1,12 +1,14 @@
 const CountryRankListItem = ({ item, onDeleteClick }) => {
   return (
-    <div>
-      <div>{item.country}</div>
-      <div>{item.gold}</div>
-      <div>{item.silver}</div>
-      <div>{item.bronze}</div>
-      <button onClick={onDeleteClick}>삭제</button>
-    </div>
+    <tr>
+      <td>{item.country}</td>
+      <td>{item.gold}</td>
+      <td>{item.silver}</td>
+      <td>{item.bronze}</td>
+      <td>
+        <button onClick={onDeleteClick}>삭제</button>
+      </td>
+    </tr>
   );
 };
 
@@ -15,16 +17,26 @@ export const CountryRankList = ({ countryList, onDeleteClick }) => {
     return b.gold - a.gold;
   });
   return (
-    <>
-      {sortedCountryList.map(item => {
-        return (
-          <CountryRankListItem
-            key={item.country}
-            item={item}
-            onDeleteClick={() => onDeleteClick(item.country)}
-          />
-        );
-      })}
-    </>
+    <table>
+      <thead>
+        <tr>
+          {RANK_LIST_TITLE.map(item => (
+            <th key={item}>{item}</th>
+          ))}
+        </tr>
+      </thead>
+
+      <tbody>
+        {sortedCountryList.map(item => {
+          return (
+            <CountryRankListItem
+              key={item.country}
+              item={item}
+              onDeleteClick={() => onDeleteClick(item.country)}
+            />
+          );
+        })}
+      </tbody>
+    </table>
   );
 };

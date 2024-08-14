@@ -11,7 +11,7 @@ const CountryFormItem = ({ inputItem, onChange, value }) => {
 
 export const CountryForm = ({ countryForm, onChange, onAddClick, onUpdateClick }) => {
   return (
-    <>
+    <form>
       {COUNTRY_FORM_INPUTS.map(inputItem => {
         return (
           <CountryFormItem
@@ -22,8 +22,10 @@ export const CountryForm = ({ countryForm, onChange, onAddClick, onUpdateClick }
           />
         );
       })}
-      <button onClick={onAddClick}>국가 추가</button>
-      <button onClick={onUpdateClick}>업데이트</button>
-    </>
+      <div className="buttonBox">
+        <button onClick={onAddClick}>국가 추가</button>
+        <button onClick={onUpdateClick}>업데이트</button>
+      </div>
+    </form>
   );
 };

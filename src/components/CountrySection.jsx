@@ -21,7 +21,8 @@ export const CountrySection = () => {
     setCountryForm(prev => ({ ...prev, [name]: changedValue }));
   };
 
-  const handleAddCountry = () => {
+  const handleAddCountry = e => {
+    e.preventDefault();
     const isExist = countryList.some(item => item.country === countryForm.country);
     if (isExist) return alert('이미 존재하는 국가입니다');
 
@@ -37,7 +38,8 @@ export const CountrySection = () => {
     resetCountryForm();
   };
 
-  const handleUpdateCountry = () => {
+  const handleUpdateCountry = e => {
+    e.preventDefault();
     const isExist = countryList.some(item => item.country === countryForm.country);
     if (!isExist) return alert('존재하지 않는 국가입니다');
 
