@@ -1,9 +1,12 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 40px 0;
   font-family: Arial, sans-serif;
-  background-color: #6baa75;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
