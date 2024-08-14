@@ -125,7 +125,9 @@ export const CountryForm = ({ countryForm, onChange, onAddClick, onUpdateClick }
 
 export const CountrySection = () => {
   const [countryForm, setCountryForm] = useState(INITIAL_COUNTRY_FORM);
-  const [countryList, setCountryList] = useState([]);
+  const [countryList, setCountryList] = useState(() => {
+    return JSON.parse(localStorage.getItem('countryList')) || [];
+  });
 
   const resetCountryForm = () => {
     setCountryForm(INITIAL_COUNTRY_FORM);
@@ -145,7 +147,12 @@ export const CountrySection = () => {
     const { isValid, message } = validateCountryForm(countryForm);
     if (!isValid) return alert(message);
 
-    setCountryList(prev => [...prev, countryForm]);
+    setCountryList(prev => {
+      const newList = [...prev, countryForm];
+      localStorage.setItem('countryList', JSON.stringify(newList));
+      return newList;
+    });
+
     resetCountryForm();
   };
 
@@ -153,16 +160,22 @@ export const CountrySection = () => {
     const isExist = countryList.some(item => item.country === countryForm.country);
     if (!isExist) return alert('존재하지 않는 국가입니다');
 
-    setCountryList(prev =>
-      prev.map(item => {
+    setCountryList(prev => {
+      const newList = prev.map(item => {
         if (item.country === countryForm.country) return countryForm;
         return item;
-      }),
-    );
+      });
+      localStorage.setItem('countryList', JSON.stringify(newList));
+      return newList;
+    });
   };
 
   const handleDeleteCountry = country => {
-    setCountryList(prev => prev.filter(item => item.country !== country));
+    setCountryList(prev => {
+      const newList = prev.filter(item => item.country !== country);
+      localStorage.setItem('countryList', JSON.stringify(newList));
+      return newList;
+    });
   };
 
   return (
