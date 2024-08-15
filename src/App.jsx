@@ -1,12 +1,13 @@
 import './App.css';
 import { CountrySection } from './components/CountrySection';
+import Container from './components/common/Container';
 
 function App() {
   return (
-    <div className="container">
+    <Container>
       <h1>2024 파리 올림픽</h1>
       <CountrySection />
-    </div>
+    </Container>
   );
 }
 
